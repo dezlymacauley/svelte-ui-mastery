@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/*
+  Web browsers automatically make the height of the `body` html element 
+  the same as the viewport (the screen of the device viewing the website).
+
+  So you don't need to set a height for the body in order to see the effect
+  of changing the background.
+*/
+body {
+  @apply bg-[#000000];
+}
