@@ -1,15 +1,15 @@
-# UI Studio Setup
+# UI Design Setup
 _______________________________________________________________________________
 
-Create a directory for the studio
+Create the directory
 ```sh
-mkdir ui-studio
+mkdir ui-design
 ```
 _______________________________________________________________________________
 
 Enter the directory
 ```sh
-cd ui-studio
+cd ui-design
 ```
 
 For the rest of this guide, 
