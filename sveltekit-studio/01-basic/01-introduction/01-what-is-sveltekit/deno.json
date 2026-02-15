@@ -1,4 +1,0 @@
-{
-  "allowScripts": ["npm:core-js@3.48.0", "npm:esbuild@0.27.2"],
-  "unstable": ["fmt-component"]
-}

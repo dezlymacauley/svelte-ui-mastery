@@ -1,15 +1,15 @@
-# UI Studio Setup
+# Svelte UI Mastery Setup
 _______________________________________________________________________________
 
-Create a directory for the studio
+Create a directory
 ```sh
-mkdir ui-studio
+mkdir svelte-ui-mastery
 ```
 _______________________________________________________________________________
 
 Enter the directory
 ```sh
-cd ui-studio
+cd svelte-ui-mastery
 ```
 
 For the rest of this guide, 
@@ -32,23 +32,13 @@ _______________________________________________________________________________
 
 This is how you set a specific version of Deno in your project
 ```sh
-mise use deno@2.6.8
+mise use deno@2.6.9
 ```
 
 You should now have a `mise.toml` file that looks like this:
 ```toml
 [tools]
-deno = "2.6.8"
-node = "25.6.0"
-```
-_______________________________________________________________________________
-
-I like to have my language servers installed locally and 
-because language servers assume you have `Node.js` installed 
-I will need to install Node.js locally using mise.
-
-```sh
-mise use node@25.6.0
+deno = "2.6.9"
 ```
 _______________________________________________________________________________
 
@@ -140,68 +130,6 @@ Use the arrow keys to select `deno` then press `Enter`
 │  ○ bun
 │  ● deno
 └
-```
-_______________________________________________________________________________
-
-Add language support for Svelte as a dev dependency
-```sh
-deno add -D npm:svelte-language-server@latest
-```
-_______________________________________________________________________________
-
-Add language support for files with Tailwind CSS classes, as a dev dependency
-```sh
-deno add -D npm:@tailwindcss/language-server@latest
-```
-_______________________________________________________________________________
-
-Add language support CSS, HTML, and JSON files.
-```sh
-deno add -D npm:vscode-langservers-extracted@latest
-```
-
-You'll get this warning because Deno prevents npm packages from automatically
-installing post install scripts:
-```
-╭ Warning
-│
-│  Ignored build scripts for packages:
-│  npm:core-js@3.48.0
-│
-│  Run "deno approve-scripts" to run build scripts.
-╰─
-```
-
-Run the command:
-```sh
-deno approve-scripts
-```
-
-You'll get a menu like this. Use the arrow keys and the spacebar to select,
-these scripts, then press Enter.
-```
-? Select which packages to approve lifecycle scripts for (<space> to select, ↑/↓/j/k to
-navigate, a to select all, i to invert selection, enter to accept, <Ctrl-c> to cancel)
-  ● npm:core-js@3.48.0
-❯ ● npm:esbuild@0.27.2
-```
-
-You should see a message like this if you have `Node.js` installed.
-```
-Approved npm:core-js@3.48.0
-Approved npm:esbuild@0.27.2
-Ran build script npm:core-js@3.48.0
-Ran build script npm:esbuild@0.27.2
-```
-_______________________________________________________________________________
-
-Add language support for TypeScript.
-Don't use Deno's built-in lsp in SvelteKit projects as you will 
-get false warnings. As a matter of fact, the denolsp will deliberately 
-disable itself when it detects a `package.json` file in your project, 
-to avoid a clashing with the TypeScript language server.
-```sh
-deno add -D npm:typescript-language-server@latest
 ```
 _______________________________________________________________________________
 
@@ -336,14 +264,6 @@ Create a deno.json file (if one already exists, nothing will happen)
 ```sh
 touch deno.json
 ```
-
-You should already have a `deno.json` file that contains the following,
-because of the `deno approve-scripts` command that was run earlier
-```json
-{
-  "allowScripts": ["npm:core-js@3.48.0", "npm:esbuild@0.27.2"]
-}
-```
 _______________________________________________________________________________
 
 Add this to the file so that Deno's built-in formatter 
@@ -355,7 +275,6 @@ can format Svelte code.
 So the final `deno.json` should look like this:
 ```json
 {
-  "allowScripts": ["npm:core-js@3.48.0", "npm:esbuild@0.27.2"],
   "unstable": ["fmt-component"]
 }
 ```

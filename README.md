@@ -3,12 +3,11 @@ _______________________________________________________________________________
 
 ### Technologies Used
 
-| Component            | Technology                |
-|----------------------|---------------------------|
-| Meta-Framework       | 🏡 SvelteKit, 🧡 Svelte   |
-| UI Layout            | 📜 HTML, 💨 Tailwind CSS  |
-| Programming Language | 🪄 TypeScript             |
-| UI Animations        | 🍀 GSAP                   |
+| Component      | Technology                          |
+|----------------|-------------------------------------|
+| Runtime        | 🦕 Deno                             |
+| Core Languages | 📜 HTML, 🎨 CSS, 🪄 TypeScript      |
+| Frameworks     | 🧡 Svelte, 💨 Tailwind CSS, 🍀 GSAP |
 _______________________________________________________________________________
 
 ### Setup
@@ -17,12 +16,12 @@ Install `mise`: [mise website](https://mise.jdx.dev/)
 
 Clone this repo
 ```sh
-git clone https://github.com/dezlymacauley/frontend-studio.git
+git clone https://github.com/dezlymacauley/svelte-ui-mastery.git
 ```
 
 Enter it
 ```sh
-cd frontend-studio
+cd svelte-ui-mastery
 ```
 
 Give `mise` permission to read the `mise.toml` file
@@ -30,7 +29,7 @@ Give `mise` permission to read the `mise.toml` file
 mise trust
 ```
 
-Install the shared dependencies (Deno and Node.js) at a directory level
+Install Deno
 ```sh
 mise install
 ```
